@@ -1,3 +1,7 @@
+## Layout
+
+Runbook repository: PackageManifest finalizer commands stay in this README.
+
 Got it — the blocking resources are **PackageManifest** objects from `packages.operators.coreos.com`.
 
 This is a very common issue in OpenShift. `PackageManifest` is provided by the **Operator Lifecycle Manager (OLM)** and is treated as a namespaced resource (even though it's mostly read-only/cache data from catalogs). When a project is being deleted, these lingering `PackageManifest`s can hold a finalizer and prevent the namespace from terminating.
@@ -68,3 +72,7 @@ Would you like me to adjust the commands with your exact project name?
 Just tell me the project name (or paste the output of `oc get packagemanifest.packages.operators.coreos.com -n <project>`) and I’ll give you the ready-to-run commands.
 
 Let me know what happens after you run the patch!
+
+---
+
+See [GROUP.md](GROUP.md) for sibling repositories. Catalog: https://github.com/nwlterry/nwlterry
